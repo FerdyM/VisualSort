@@ -44,18 +44,23 @@ Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tin
 
 ## User Experience and Interaction
 ***
-Est ultricies integer quis auctor elit sed. Turpis massa sed elementum tempus egestas sed. Amet mauris commodo quis imperdiet. Aliquam purus sit amet luctus venenatis. Ultricies leo integer malesuada nunc vel. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem.
-
-Ullamcorper a lacus vestibulum sed arcu non odio. Sit amet purus gravida quis blandit turpis cursus in.
+The user begins by choosing how they want to input their unsorted array, this can be done by specifying a csv file or manual entry; alternatively the program can use a default unsorted array as an example. Next the user will decide what to do with this array. The first option is visualizing the sorting algorithim as it sorts to get a better understanding of how it works, the user will also have the option to view information that desrcibes step-by-step how the algorithim works. Alternatively if the user wishes to compare two algorithims they can do that too, and ofcourse the user always has the option to quit and exit the program.
 
 ## Instructions
 ***
-Naecenas pharetra convallis posuere morbi leo urna molestie at. Eget aliquet nibh praesent tristique. Ac ut consequat semper viverra nam. Auctor elit sed vulputate mi sit amet mauris commodo. Sed risus pretium quam vulputate dignissim. 
-
-Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Varius morbi enim nunc faucibus a pellentesque sit amet. Augue ut lectus arcu bibendum. Odio eu feugiat pretium nibh ipsum consequat nisl. Ultrices neque ornare aenean euismod. Sit amet tellus cras adipiscing. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Vel eros donec ac odio tempor orci. 
-
-Tellus cras adipiscing enim eu turpis egestas. Morbi non arcu risus quis. Neque aliquam vestibulum morbi blandit cursus risus at. Duis at tellus at urna condimentum mattis pellentesque id. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et.
-
+1. Make sure you have ruby downloaded, if not follow the instructions [here](https://www.ruby-lang.org/en/documentation/installation/)
+2. Download the visual_sort files to your computer and unzip them
+3. Install bundler(if you havent already), navigate to the visual_sort file and type: 
+```>install bundler```
+4. Install the required gems, type:
+```>bundle install```
+5. Change directory to the main_files
+```>cd main_files```
+6. Run run_visual_sort.rb
+```>ruby run_visual_sort.rb```
+7. If the file dosent run you may need to:
+```>gem update --system```
+8. Repeat step 6
 
 ## Implementation and Design Plan
 ***
