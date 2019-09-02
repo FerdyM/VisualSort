@@ -49,17 +49,24 @@ The user begins by choosing how they want to input their unsorted array, this ca
 ## Instructions
 ***
 1. Make sure you have ruby downloaded, if not follow the instructions [here](https://www.ruby-lang.org/en/documentation/installation/)
+
 2. Download the visual_sort files to your computer and unzip them
+
 3. Install bundler(if you havent already), navigate to the visual_sort file and type: 
 ```>install bundler```
+
 4. Install the required gems, type:
 ```>bundle install```
-5. Change directory to the main_files
+
+5. Change directory to the main_files, type:
 ```>cd main_files```
-6. Run run_visual_sort.rb
+
+6. Run run_visual_sort.rb, type:
 ```>ruby run_visual_sort.rb```
-7. If the file dosent run you may need to:
+
+7. If the file dosent run you may need to type:
 ```>gem update --system```
+
 8. Repeat step 6
 
 ## Implementation and Design Plan
