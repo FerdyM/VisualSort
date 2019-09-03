@@ -12,7 +12,7 @@ class Screen
         return formatted_array
     end
     def self.drawArray(array, window)
-        table = AsciiCharts::Cartesian.new(returnArray(array), :bar => true, :hide_zero => true).draw
+        table = AsciiCharts::Cartesian.new(array), :bar => true, :hide_zero => true).draw
         table.split("\n").each.with_index do |line, row|
           window.setpos(row, 0)
           window.addstr(line)
@@ -20,7 +20,7 @@ class Screen
     end
     def self.updateScreen(array, window)
         window.erase
-        Screen.drawArray(array, window)
+        Screen.drawArray(returnArray(array), window)
         window.refresh
         sleep(0.05)
     end
@@ -29,6 +29,7 @@ class Screen
         start_color
         curs_set(0)
         noecho
-        return Curses::Window.new(0, 0, 1, 2)
+        window = Curses::Window.new(0, 0, 1, 2)
+        return window
     end
 end

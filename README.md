@@ -72,11 +72,15 @@ The user begins by choosing how they want to input their unsorted array, this ca
 ## Implementation and Design Plan
 ***
 
-![timeline](./diagrams/timeline.jpg?raw=true "Title")
+![timeline](./docs/diagrams/timeline.jpg?raw=true "Title")
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet. Dolor sit amet consectetur adipiscing elit ut aliquam. Tempus egestas sed sed risus pretium quam.
 
-![flowchart](./diagrams/flowchart.jpg?raw=true "VisualSort Flowchart")
+![Process Diagram](./docs/diagrams/process_diagram.jpg?raw=true "VisualSort Process Diagram")
+
+![class](./docs/diagrams/class_diagram.jpg?raw=true "VisualSort Class Diagram")
+
+![flow](./docs/diagrams/flow_diagram.jpg?raw=true "VisualSort Flow Diagram")
 
 
 
