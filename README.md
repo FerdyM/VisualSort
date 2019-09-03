@@ -78,9 +78,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ![Process Diagram](./docs/diagrams/process_diagram.jpg?raw=true "VisualSort Process Diagram")
 
-![class](./docs/diagrams/class_diagram.jpg?raw=true "VisualSort Class Diagram")
+![class](./docs/diagrams/class_diagram.jpeg?raw=true "VisualSort Class Diagram")
 
-![flow](./docs/diagrams/flow_diagram.jpg?raw=true "VisualSort Flow Diagram")
+![flow](./docs/diagrams/flow_diagram.jpeg?raw=true "VisualSort Flow Diagram")
 
 
 

@@ -19,8 +19,8 @@ class WindowClass
     def self.updateWindow(unsortedArray, window)
         window.erase
         WindowClass.drawGraph(formatArray(unsortedArray), window)
+        sleep(0.005)
         window.refresh
-        sleep(0.05)
     end
     def self.drawGraph(array, window)
         table = AsciiCharts::Cartesian.new((array), :bar => true, :hide_zero => true).draw

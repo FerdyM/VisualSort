@@ -1,8 +1,8 @@
 require 'test/unit'
-require_relative 'main'
-require_relative 'window'
+# require_relative 'main'
+# require_relative 'window'
 require_relative 'algorithims'
-class MainControlTest < Test::Unit::TestCase
+# class MainControlTest < Test::Unit::TestCase
     # def test_greetUser
     #     greeting = MainControl.greetUser
     #     assert_equal("Hello User, Welcome to VisualSort a sorting algortithim visualization and comparison tool!", greeting)
@@ -27,7 +27,7 @@ class MainControlTest < Test::Unit::TestCase
     #     array = MainControl.getReadEntry
     #     assert_equal([76, 55, 93, 15, 35, 37, 70, 30, 75, 14, 38, 16, 2, 81, 21, 10, 32, 36, 42, 69, 31, 66, 79, 26, 54, 83, 58, 84, 95, 40, 92, 25, 41, 65, 39, 74, 56, 18, 34, 23, 64, 6, 3, 7, 29, 44, 45, 94, 19, 100], array)
     # end
-end
+# end
 # class WindowClassTest < Test::Unit::TestCase
 #     def test_formatArray
 #         arr = WindowClass.formatArray([3, 7, 5, 9, 10, 8, 12])
@@ -36,9 +36,24 @@ end
 # end
 
 class BubbleSort < Test::Unit::TestCase
-    def test_bubbleSort
+    # def test_bubbleSort
+    #     unsortedArray = [3, 2, 4, 1]
+    #     sorted = Algorithim.bubbleSort(unsortedArray)
+    #     assert_equal([1, 2, 3, 4], sorted)
+    # end
+    # def test_selectionSort
+    #     unsortedArray = [3, 2, 4, 1]
+    #     sorted = Algorithim.selectionSort(unsortedArray)
+    #     assert_equal([1, 2, 3, 4], sorted)
+    # end
+    # def test_insertionSort
+    #     unsortedArray = [3, 2, 4, 1]
+    #     sorted = Algorithim.insertionSort(unsortedArray)
+    #     assert_equal([1, 2, 3, 4], sorted)
+    # end
+    def test_mergeSort
         unsortedArray = [3, 2, 4, 1]
-        sorted = Algorithim.bubbleSort(unsortedArray)
+        sorted = Algorithim.mergeSort(unsortedArray)
         assert_equal([1, 2, 3, 4], sorted)
     end
 end
