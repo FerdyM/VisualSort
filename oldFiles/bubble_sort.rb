@@ -9,7 +9,6 @@ def bubble_sort(array)
         return array
     end
     flag = true
-    count = 0
     while flag
         flag = false
         (array.length - 1).times do |count|
