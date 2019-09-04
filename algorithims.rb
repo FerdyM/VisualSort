@@ -1,5 +1,6 @@
 require 'curses'
 require 'tty-cursor'
+require 'colorize'
 require_relative 'window'
 
 class Algorithim
@@ -24,7 +25,7 @@ class Algorithim
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
-        puts "\nSorting complete took: #{iterations} iterations"
+        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :white, :background => :red)
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
@@ -44,7 +45,7 @@ class Algorithim
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
-        puts "\nSorting complete took: #{iterations} iterations"
+        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :black)
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
@@ -66,7 +67,7 @@ class Algorithim
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
-        puts "\nSorting complete took: #{iterations} iterations"
+        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :black)
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
@@ -76,6 +77,8 @@ class Merge
         if array.length <= 1
           array
         else
+          WindowClass.updateWindow((left + array + right), window, (0..left.length).to_a, (left.length..(left.length + array.length)).to_a)
+          sleep(0.1)
           mid = (array.length / 2).floor
           left_split = array[0..mid-1]
           right_split = array[mid..array.length]
@@ -83,8 +86,8 @@ class Merge
           right_split_ordered = merge_sort(left + left_split_ordered, array[mid..array.length], right, window, iterations)
          
           merge = merge(left_split_ordered, right_split_ordered, iterations)
-          sleep(0.05)
-          WindowClass.updateWindow((left + merge + right), window)
+          WindowClass.updateWindow((left + merge + right), window, (0..(left.length + array.length)).to_a, (0..0).to_a)
+          sleep(0.1)
           return merge
         end
     end

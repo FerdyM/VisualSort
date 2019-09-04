@@ -1,6 +1,7 @@
 require 'csv'
 require 'curses'
 require 'tty-prompt'
+require 'colorize'
 require_relative 'window'
 require_relative 'algorithims'
 
@@ -39,6 +40,7 @@ class MainControl
                 Algorithim.selectionSort(unsortedArray.dup, window)
             when "MergeSort"
                 Merge.merge_sort([], unsortedArray.dup, [], window, 0)
+                sleep(5)
             when "Quit"
                 abort("")
             end      
