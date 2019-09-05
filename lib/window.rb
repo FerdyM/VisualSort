@@ -19,13 +19,13 @@ class WindowClass
         window = Curses::Window.new(0, 0, 1, 2)
         return window
     end
-    def self.updateWindow(unsortedArray, window, sorted_range, sorting_range)
+    def self.updateWindowMerge(unsortedArray, window, sorted_range, sorting_range)
         window.erase
-        WindowClass.drawGraph(formatArray(unsortedArray), window, sorted_range, sorting_range)
+        WindowClass.drawGraphMerge(formatArray(unsortedArray), window, sorted_range, sorting_range)
         sleep(0.005)
         window.refresh
     end
-    def self.drawGraph(array, window, sorted_range, sorting_range)
+    def self.drawGraphMerge(array, window, sorted_range, sorting_range)
         table = AsciiCharts::Cartesian.new((array), :bar => true, :hide_zero => true).draw
         table.split("\n").each.with_index do |line, row|
             line.chars.each.with_index do |char, col|
@@ -41,6 +41,19 @@ class WindowClass
                     window.addch(char)
                 end
             end
+        end
+    end
+    def self.updateWindow(unsortedArray, window)
+        window.erase
+        WindowClass.drawGraph(formatArray(unsortedArray), window)
+        sleep(0.005)
+        window.refresh
+    end
+    def self.drawGraph(array, window)
+        table = AsciiCharts::Cartesian.new((array), :bar => true, :hide_zero => true).draw
+        table.split("\n").each.with_index do |line, row|
+          window.setpos(row, 0)
+          window.addstr(line)
         end
     end
 end

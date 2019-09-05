@@ -1,19 +1,23 @@
+#Neccessary for working with csv files
 require 'csv'
+#Used to create window to display visualization
 require 'curses'
+#Used for easy intuitive menu's
 require 'tty-prompt'
+#Used to color the visualization
 require 'colorize'
 require_relative 'window'
 require_relative 'algorithims'
 
+#Main class, controls the flow of program
 class MainControl
+    #starts program
     def self.run_program
-        MainControl.greetUser
+        puts "Hello User, Welcome to VisualSort a sorting algortithim visualization and comparison tool!"
         unsortedArray = MainControl.getReadOrManual
         MainControl.getAlgorithimChoice(unsortedArray.dup)
     end
-    def self.greetUser
-        puts "Hello User, Welcome to VisualSort a sorting algortithim visualization and comparison tool!"
-    end
+    #Finds how user wants to enter array, directs them to that method
     def self.getReadOrManual
         system("clear")
         prompt = TTY::Prompt.new
@@ -26,6 +30,7 @@ class MainControl
         end
         return unsortedArray
     end
+    #Gets choice and calls desired algorithim / visualization
     def self.getAlgorithimChoice(unsortedArray)
         system("clear")
         prompt = TTY::Prompt.new
@@ -34,27 +39,37 @@ class MainControl
             window = WindowClass.createWindow
             case choice
             when "BubbleSort"
-                Algorithim.bubbleSort(unsortedArray.dup, window) do |count, array|
+                Algorithim.bubbleSort(unsortedArray.dup, window) do |array|
                     sorted = array.dup.sort
-                    if sorted[0..count] == array[0..count]
-                        sleep(0.5)
-                        p array[0..count]
-                        p array[(count + 1)..-1]
-                        # WindowClass.drawGraph(array, window, array[0..count], array[(count + 1)..-1])
+                    array.each_with_index do |num, index|
+                        # WindowClass.updateWindow(array, window)
+                        if array[0..index] == sorted[0..index]
+                            WindowClass.updateWindow(array, window, (0..index).to_a, (0..0).to_a)
+                            #sleep(0.05)
+                        end
                     end
                 end
             when "InsertionSort"
-                Algorithim.insertionSort(unsortedArray.dup, window) do |count, array|
-                    sorted = array.dup.sort
-                    if sorted[0..count] == array[0..count]
-                        sleep(0.5)
-                        p array[0..count]
-                        p array[(count + 1)..-1]
-                        # WindowClass.drawGraph(array, window, array[0..count], array[(count + 1)..-1])
+                Algorithim.insertionSort(unsortedArray.dup, window) do |array|
+                    sorted = array.sort
+                    array.each_with_index do |num, index|
+                        if array[0..index] = sorted[0..index]
+                            WindowClass.updateWindow(array, window, (0..array.length).to_a, (0..0).to_a)
+                            sleep(0.5)
+                        end
                     end
+                    # WindowClass.drawGraph(array, window, array[0..count], array[(count + 1)..-1])
                 end
             when "SelectionSort"
-                Algorithim.selectionSort(unsortedArray.dup, window)
+                Algorithim.selectionSort(unsortedArray.dup, window) do |array|
+                    sorted = array.sort
+                    array.each_with_index do |num, index|
+                        if array[0..index] = sorted[0..index]
+                            WindowClass.updateWindow(array, window, (0..index).to_a, (0..0).to_a)
+                            sleep(0.5)
+                        end
+                    end
+                end
             when "MergeSort"
                 Merge.merge_sort([], unsortedArray.dup, [], window, 0)
                 sleep(5)

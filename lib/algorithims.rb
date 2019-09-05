@@ -19,14 +19,13 @@ class Algorithim
                 end
                 iterations += 1
                 sleep(0.001)
-                yield(count, array)
-                # WindowClass.updateWindow(array, window)
+                WindowClass.updateWindow(array, window)
             end
         end
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
-        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :white, :background => :red)
+        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :white)
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
@@ -35,8 +34,8 @@ class Algorithim
         iterations = 0
         n.times do |i|
             min_index = i
-            for j in (i + 1)..n
-                min_index = j if array[j] < array[min_index]
+            for count in (i + 1)..n
+                min_index = count if array[count] < array[min_index]
                 iterations += 1
             end
             array[i], array[min_index] = array[min_index], array[i] if min_index != i
@@ -46,30 +45,29 @@ class Algorithim
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
-        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :black)
+        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :white)
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
     def self.insertionSort(array, window)
         iterations = 0
-        (array.length).times do |j|
-            while j > 0
-                if array[j-1] > array[j]
-                array[j], array[j-1] = array[j-1], array[j]
+        (array.length).times do |count|
+            while count > 0
+                iterations += 1
+                count-=1
+                sleep(0.01)
+                if array[count-1] > array[count]
+                array[count], array[count-1] = array[count-1], array[count]
                 else
                 break
                 end
-                iterations += 1
-                j-=1
-                sleep(0.001)
-                # WindowClass.updateWindow(array, window)q
+                WindowClass.updateWindow(array, window)
             end
-            yield(iterations, array)
         end
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
-        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :black)
+        puts "\nSorting complete took: #{iterations} iterations".colorize(:color => :red, :background => :white)
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
@@ -79,7 +77,7 @@ class Merge
         if array.length <= 1
           array
         else
-          WindowClass.updateWindow((left + array + right), window, (0..left.length).to_a, (left.length..(left.length + array.length)).to_a)
+          WindowClass.updateWindowMerge((left + array + right), window, (0..left.length).to_a, (left.length..(left.length + array.length)).to_a)
           sleep(0.1)
           mid = (array.length / 2).floor
           left_split = array[0..mid-1]
@@ -88,7 +86,7 @@ class Merge
           right_split_ordered = merge_sort(left + left_split_ordered, array[mid..array.length], right, window, iterations)
          
           merge = merge(left_split_ordered, right_split_ordered, iterations)
-          WindowClass.updateWindow((left + merge + right), window, (0..(left.length + array.length)).to_a, (0..0).to_a)
+          WindowClass.updateWindowMerge((left + merge + right), window, (0..(left.length + array.length)).to_a, (0..0).to_a)
           sleep(0.1)
           return merge
         end
