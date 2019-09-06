@@ -52,6 +52,10 @@ Primarily this application is aimed to help people understand how a sorting algo
 ***
 The user begins by choosing how they want to input their unsorted array, this can be done by specifying a csv file or manual entry; alternatively the program can use a default unsorted array as an example. Next the user picks which sorting algorithm they would like to visualize. The user can pick from BubbleSort, InsertionSort, SelectionSort and MergeSort. In the future many more sorting algorithm's will be added. After the sorting algorithm complete's  the sorted array will be displayed along with the amount of iterations it took to complete.
 
+## Testing
+***
+Extensive testing to all user input methods, al algorithm's also extensively tested. Testing the output of whole program would have been ideal however test-unit is closed every time curses gem is used.
+
 ## Instructions
 ***
 1. Make sure you have ruby downloaded, if not follow the instructions [here](https://www.ruby-lang.org/en/documentation/installation/)
