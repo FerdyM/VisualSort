@@ -3,9 +3,14 @@ require 'tty-cursor'
 require 'colorize'
 require_relative 'window'
 
+#Class that holds all the algorithims
 class Algorithim
+    #this algorithim works by iterating through the array
+    #it will compare the current number to the next number and if the next is smaller they will swap
+    #this continues until the array is sorted
     def self.bubbleSort(array, window)
         flag = true
+        #this is the variable we use to measure effeciency
         iterations = 0
         while flag 
             flag = false
@@ -17,11 +22,14 @@ class Algorithim
                     array[count + 1] = currentNum
                     array[count] = nextNum
                 end
+                #every iteration is counted
                 iterations += 1
                 sleep(0.001)
+                #every time the array is updated it is passed to the updatewindow method which updates the window
                 WindowClass.updateWindow(array, window)
             end
         end
+        #once the sorting is complete the window close and tells the user how many iterations it took
         Curses.close_screen
         puts TTY::Cursor.clear_screen_up
         p array
@@ -29,6 +37,7 @@ class Algorithim
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
+    #selection sort works by constantly looking for the minimum integer and adds it to the front of the array
     def self.selectionSort(array, window)
         n = array.length - 1
         iterations = 0
@@ -49,6 +58,9 @@ class Algorithim
         sleep(3)
         puts TTY::Cursor.clear_screen_up
     end
+    #Insertion sort works by keeping one element constant, checks if the next element is bigger than the current if it is swaps them
+    #If it is not bigger the if/else terminates
+    #it iterates the array.length times
     def self.insertionSort(array, window)
         iterations = 0
         (array.length).times do |count|
@@ -73,6 +85,9 @@ class Algorithim
     end
 end
 class Merge
+    #Merge sort works by splitting the array into two halves recursively until it cant be divided anymore
+    #Next it merges the smaller arrays into a largr sorted array
+    #We need to put the array back together every iteration which is why it looks like alien language
     def self.merge_sort(left, array, right, window, iterations)
         if array.length <= 1
           array

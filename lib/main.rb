@@ -81,7 +81,10 @@ class MainControl
         end
     end
 end
+#This is the class that holds all the input methods
 class GetInputArray
+    #This is the method for getting manual entry
+    #it asks the user for input then checks the integers are spaced correctly and there are no characters
     def self.getManualEntry
         loop do
             puts TTY::Cursor.clear_screen_down
@@ -96,6 +99,8 @@ class GetInputArray
             end
         end
     end
+    #This method asks the user for the file path of their csv file
+    #it then opens the csv and iterates through the file, outputting a correctly formatted array
     def self.getReadEntry
         loop do
             begin 
@@ -118,4 +123,5 @@ class GetInputArray
         end
     end
 end
+#This starts the game
 MainControl.run_program
