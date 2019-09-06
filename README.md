@@ -88,17 +88,37 @@ The user begins by choosing how they want to input their unsorted array, this ca
 ## Implementation and Design Plan
 ***
 
-Implementation plan was done using trello.com
+#### Implementation plan 
 
 ![Implementation](./docs/diagrams/implementation.PNG?raw=true "Implementation plan")
 
+### Timeline
+
 ![timeline](./docs/diagrams/timeline.jpg?raw=true "Title")
 
-![Process Diagram](./docs/diagrams/process_diagram.jpg?raw=true "VisualSort Process Diagram")
+### Process Diagram
+
+![Process Diagram](./docs/diagrams/process_diagram.jpeg?raw=true "VisualSort Process Diagram")
+
+### Class Diagram
 
 ![class](./docs/diagrams/class_diagram.jpeg?raw=true "VisualSort Class Diagram")
 
-![flow](./docs/diagrams/flow_diagram.jpeg?raw=true "VisualSort Flow Diagram")
+### Bubble Sort
+
+![bubblesort](./docs/diagrams/BubbleSort.png?raw=true "Bubble Sort")
+
+### Insertion Sort
+
+![InsertionSort](./docs/diagrams/InsertionSort.png?raw=true "Insertion Sort")
+
+### Selection Sort
+
+![SelectionSort](./docs/diagrams/SelectionSort.jpg?raw=true "Selection Sort")
+
+### Merge Sort
+
+![MergeSort](./docs/diagrams/MergeSort.png?raw=true "Merge Sort")
 
 
 
