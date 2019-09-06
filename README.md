@@ -1,6 +1,6 @@
 # Visual-Sort Ruby Application
 ***
-Source-code: lorem ipsum yadda yadda
+Source-code: https://github.com/FerdyM/VisualSort
 
 ## Description
 ***
@@ -17,34 +17,40 @@ Primarily this application is aimed to help people understand how a sorting algo
 
 ## Features
 ***
++ Merge-Sort with coloured visualization 
++ Selection-Sort visualization
++ Insertion-Sort visualization
++ Selection-Sort visualization
++ Bubble-Sort visualization
++ Compare iterations of different algorithims
++ Read custom csv files
 
-#### MVP features
+#### Features to be added soon
 ***
-+ Take text input from user
-+ Read csv file specified by user
-+ Sort unordered integers provided by user
-+ Visualize the algorithim live as it sorts
-+ Display this visualization to a window, with no flickering 
-+ Output the sorted list of integers to a file specified by the user
-
-#### Extensible features
-***
-+ Count how many iterations each algorithim takes
-+ Record exactly how long each algorithim takes
-+ Compare the stats of two algorithims side by side
++ More algorithms
++ Coloured visualization's
++ Output to a file
 
 
 ## Code structure
 ***
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu turpis egestas pretium aenean. Lacinia quis vel eros donec ac. 
++ 'main.rb' - This file holds the MainControl class and the logic to start the game
++ 'window.rb' - This file holds the WindowClass, all the methods that control the display
++ 'algorithms.rb' - Holds all the algorithm's and calls the display methods
++ This all gets stored in the lib folder
 
 #### Gems
 
-Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Lacinia quis vel eros donec ac. Et tortor consequat id porta nibh venenatis.
+- 'curses'
+- 'ascii-charts'
+- 'tty-prompt'
+- 'tty-cursor'
+- 'colorize'
+- 'csv'
 
 ## User Experience and Interaction
 ***
-The user begins by choosing how they want to input their unsorted array, this can be done by specifying a csv file or manual entry; alternatively the program can use a default unsorted array as an example. Next the user will decide what to do with this array. The first option is visualizing the sorting algorithim as it sorts to get a better understanding of how it works, the user will also have the option to view information that desrcibes step-by-step how the algorithim works. Alternatively if the user wishes to compare two algorithims they can do that too, and ofcourse the user always has the option to quit and exit the program.
+The user begins by choosing how they want to input their unsorted array, this can be done by specifying a csv file or manual entry; alternatively the program can use a default unsorted array as an example. Next the user picks which sorting algorithm they would like to visualize. The user can pick from BubbleSort, InsertionSort, SelectionSort and MergeSort. In the future many more sorting algorithm's will be added. After the sorting algorithm complete's  the sorted array will be displayed along with the amount of iterations it took to complete.
 
 ## Instructions
 ***
@@ -53,18 +59,28 @@ The user begins by choosing how they want to input their unsorted array, this ca
 2. Download the visual_sort files to your computer and unzip them
 
 3. Install bundler(if you havent already), navigate to the visual_sort file and type: 
+
+
 ```>install bundler```
 
 4. Install the required gems, type:
+
+
 ```>bundle install```
 
-5. Change directory to the main_files, type:
-```>cd main_files```
+5. Change directory to the lib, type:
 
-6. Run run_visual_sort.rb, type:
-```>ruby run_visual_sort.rb```
+
+```>cd lib```
+
+6. Run maint.rb, type:
+
+
+```>ruby main.rb```
 
 7. If the file dosent run you may need to type:
+
+
 ```>gem update --system```
 
 8. Repeat step 6
@@ -72,9 +88,11 @@ The user begins by choosing how they want to input their unsorted array, this ca
 ## Implementation and Design Plan
 ***
 
-![timeline](./docs/diagrams/timeline.jpg?raw=true "Title")
+Implementation plan was done using trello.com
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet sit amet cursus sit amet. Dolor sit amet consectetur adipiscing elit ut aliquam. Tempus egestas sed sed risus pretium quam.
+![Implementation](./docs/diagrams/implementation.PNG?raw=true "Implementation plan")
+
+![timeline](./docs/diagrams/timeline.jpg?raw=true "Title")
 
 ![Process Diagram](./docs/diagrams/process_diagram.jpg?raw=true "VisualSort Process Diagram")
 
