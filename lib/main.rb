@@ -42,10 +42,8 @@ class MainControl
                 Algorithim.bubbleSort(unsortedArray.dup, window) do |array|
                     sorted = array.dup.sort
                     array.each_with_index do |num, index|
-                        # WindowClass.updateWindow(array, window)
                         if array[0..index] == sorted[0..index]
                             WindowClass.updateWindow(array, window, (0..index).to_a, (0..0).to_a)
-                            #sleep(0.05)
                         end
                     end
                 end
@@ -58,7 +56,6 @@ class MainControl
                             sleep(0.5)
                         end
                     end
-                    # WindowClass.drawGraph(array, window, array[0..count], array[(count + 1)..-1])
                 end
             when "SelectionSort"
                 Algorithim.selectionSort(unsortedArray.dup, window) do |array|
@@ -105,7 +102,7 @@ class GetInputArray
         loop do
             begin 
                 puts TTY::Cursor.clear_screen_up
-                puts "You've chosen to read from a csv, make sure the csv only contains integers, for an example use (example.csv), but feel free to use your own.\n Enter the filepath of you csv: "
+                puts "You've chosen to read from a csv, make sure the csv only contains integers, for an example use (example.csv), but feel free to use your own.\n Enter the filepath of your csv: "
                 filepath = gets.chomp
                 data = CSV.read(filepath)
                 data.flatten!.map!(&:to_i)
